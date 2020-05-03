@@ -1,0 +1,15 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        m1 = Counter(magazine)
+        m2 = Counter(ransomNote)
+
+        flag= True
+
+        for ele in m2.keys():
+            if ele in m1.keys():
+                if m2[ele]>m1[ele]:
+                    flag= False
+            else:
+                flag=False
+                
+        return flag
