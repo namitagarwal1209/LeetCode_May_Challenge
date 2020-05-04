@@ -1,0 +1,26 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        s=''
+        while num > 1:
+            rem = num%2
+            s+=str(rem)
+            num=num//2
+        s+='1'
+        s=s[::-1]
+
+        #compliment
+        comp=''
+        for ele in s:
+            if ele=='1':
+                comp+='0'
+            else:
+                comp+='1'
+
+        #b->d
+        comp=comp[::-1]
+
+        f=0
+        for i in range(len(comp)):
+            f+=int(comp[i])*(2**i)
+        
+        return f
