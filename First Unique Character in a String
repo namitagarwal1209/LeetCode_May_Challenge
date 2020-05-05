@@ -1,0 +1,10 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        
+        m1=Counter(s)
+        
+        for key, value in m1.items():
+            if value==1:
+                return s.index(key)
+
+        return -1
